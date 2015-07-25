@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Brattli Consulting - @ViewBag.Title</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				@Html.ActionLink("Brattli Consulting, Inc.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown">Our Company<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>@Html.ActionLink("What We Do", "About", "Home")</li>
+							<li>@Html.ActionLink("Performance Stories", "Performance", "Home")</li>
+							<li>@Html.ActionLink("Client Quotes", "Quotes", "Home")</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown">Who We Are<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>@Html.ActionLink("Loreen Brattli", "Loreen", "Home")</li>
+							<li>@Html.ActionLink("Oystein Brattli", "Oystein", "Home")</li>
+							<li>@Html.ActionLink("Our Priciples", "Principles", "Home")</li>
+						</ul>
+					</li>
+					<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container body-content">
+		<div class="page-header">
+			<h1>@ViewBag.Title</h1>
+		</div>
+		@RenderBody()
+	</div>
+	<hr>
+	<footer class="navbar-bottom">
+		<div class="container navbar-text">
+			&copy @DateTime.Now.Year - Brattli Consulting, Inc.
+		</div>
+	</footer>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
+</body>
+</html>
